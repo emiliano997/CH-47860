@@ -10,7 +10,7 @@ public class Prueba {
 
     mishi.lavarse();
 
-    Animal michu = new Gato(); // Polimorfismo
+    // Animal michu = new Gato(); // Polimorfismo
     // michu = new Perro();
   }
 }
