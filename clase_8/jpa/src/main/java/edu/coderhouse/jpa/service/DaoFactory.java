@@ -25,7 +25,7 @@ public class DaoFactory {
   public void create(Object obj) throws Exception {
     Session session = this.sessionFactory.getCurrentSession();
     session.beginTransaction();
-    session.save(obj); // Actualizar
+    session.persist(obj); // Actualizar
     session.getTransaction().commit();
 
   }
@@ -33,7 +33,7 @@ public class DaoFactory {
   public List<Alumno> getAlumnos() {
     Session session = sessionFactory.getCurrentSession();
     session.beginTransaction();
-    Query<Alumno> query = session.createQuery("SELECT al FROM Alumno al");
+    Query<Alumno> query = session.createNativeQuery("SELECT * FROM alumno", Alumno.class); // SQL nativo
     List<Alumno> listaAlumnos = query.list();
     session.getTransaction().commit();
     return listaAlumnos;
@@ -42,7 +42,8 @@ public class DaoFactory {
   public void update(Object obj) {
     Session session = sessionFactory.getCurrentSession();
     session.beginTransaction();
-    session.saveOrUpdate(obj);
+    session.persist(obj);
+    ;
     session.getTransaction().commit();
   }
 
