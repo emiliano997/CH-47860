@@ -1,7 +1,10 @@
 package edu.coderhouse.jpa.entity;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
@@ -11,6 +14,18 @@ public class Alumno {
   public Alumno() {
     super();
   }
+
+  public Alumno(String nombre, String apellido, long dni, long legajo) {
+    super();
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.dni = dni;
+    this.legajo = legajo;
+  }
+
+  @Id
+  @Column(name = "ID")
+  private long id;
 
   @Column(name = "NOMBRE")
   private String nombre;
@@ -54,6 +69,14 @@ public class Alumno {
 
   public void setLegajo(long legajo) {
     this.legajo = legajo;
+  }
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
   }
 
 }

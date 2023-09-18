@@ -25,7 +25,7 @@ public class DaoFactory {
   public void create(Object obj) throws Exception {
     Session session = this.sessionFactory.getCurrentSession();
     session.beginTransaction();
-    session.persist(obj); // Actualizar
+    session.persist(obj);
     session.getTransaction().commit();
 
   }
@@ -42,8 +42,8 @@ public class DaoFactory {
   public void update(Object obj) {
     Session session = sessionFactory.getCurrentSession();
     session.beginTransaction();
-    session.persist(obj);
-    ;
+    session.merge(obj); // Update
+
     session.getTransaction().commit();
   }
 

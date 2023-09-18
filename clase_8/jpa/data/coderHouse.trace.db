@@ -1,0 +1,44 @@
+2023-09-18 19:51:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "id" no encontrada
+Column "id" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3492)
+	at org.h2.jdbc.JdbcResultSet.findColumn(JdbcResultSet.java:178)
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.findColumn(HikariProxyResultSet.java)
+	at org.hibernate.sql.results.jdbc.internal.AbstractResultSetAccess.resolveColumnPosition(AbstractResultSetAccess.java:65)
+	at org.hibernate.query.results.ResultsHelper.lambda$resolveSqlExpression$0(ResultsHelper.java:64)
+	at org.hibernate.query.results.DomainResultCreationStateImpl.resolveSqlExpression(DomainResultCreationStateImpl.java:280)
+	at org.hibernate.query.results.ResultsHelper.resolveSqlExpression(ResultsHelper.java:58)
+	at org.hibernate.query.results.implicit.ImplicitFetchBuilderBasic.buildFetch(ImplicitFetchBuilderBasic.java:97)
+	at org.hibernate.query.results.implicit.ImplicitFetchBuilderBasic.buildFetch(ImplicitFetchBuilderBasic.java:37)
+	at org.hibernate.query.results.DomainResultCreationStateImpl.visitIdentifierFetch(DomainResultCreationStateImpl.java:432)
+	at org.hibernate.sql.results.graph.entity.AbstractEntityResultGraphNode.afterInitialize(AbstractEntityResultGraphNode.java:48)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createDomainResult(AbstractEntityPersister.java:1258)
+	at org.hibernate.query.results.dynamic.DynamicResultBuilderEntityCalculated.buildResult(DynamicResultBuilderEntityCalculated.java:134)
+	at org.hibernate.query.results.dynamic.DynamicResultBuilderEntityCalculated.buildResult(DynamicResultBuilderEntityCalculated.java:31)
+	at org.hibernate.query.results.ResultSetMappingImpl.resolve(ResultSetMappingImpl.java:229)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:477)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:267)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:168)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.list(JdbcSelectExecutorStandardImpl.java:93)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:31)
+	at org.hibernate.query.sql.internal.NativeSelectQueryPlanImpl.performList(NativeSelectQueryPlanImpl.java:97)
+	at org.hibernate.query.sql.internal.NativeQueryImpl.doList(NativeQueryImpl.java:621)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:367)
+	at edu.coderhouse.jpa.service.DaoFactory.getAlumnos(DaoFactory.java:38)
+	at edu.coderhouse.jpa.JpaApplication.run(JpaApplication.java:24)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at edu.coderhouse.jpa.JpaApplication.main(JpaApplication.java:17)
+2023-09-18 19:54:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-09-18 20:01:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
