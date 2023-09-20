@@ -1,0 +1,14 @@
+2023-09-18 22:00:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-09-18 22:00:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-09-18 22:00:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-214]
+2023-09-18 22:01:57 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "CLIENTE_ID" no encontrada
+Table "CLIENTE_ID" not found; SQL statement:
+SELECT * FROM CLIENTES
+INNER JOIN DOMICILIOS ON DOMICILIOS,CLIENTE_ID = CLIENTES.ID [42102-214]
