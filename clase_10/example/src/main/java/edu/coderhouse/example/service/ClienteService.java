@@ -8,13 +8,10 @@ import edu.coderhouse.example.entity.Cliente;
 
 import java.util.List;
 
-import org.hibernate.SessionFactory;
-
 @Service
 public class ClienteService {
 
     @Autowired
-    // private SessionFactory sessionFactory;
     private JdbcTemplate jdbcTemplate;
 
     public ClienteService() {
@@ -26,7 +23,6 @@ public class ClienteService {
 
     public void createCliente(Cliente cliente) {
         // create a client
-
         this.jdbcTemplate.update("INSERT INTO cliente (nombre, email) VALUES (?, ?)", cliente.getNombre(),
                 cliente.getEmail());
     }
