@@ -1,46 +1,16 @@
-CREATE DATABASE `coder-books`;
-
-USE `coder-books`;
-
-CREATE TABLE author(
-	author_id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(250) NOT NULL,
-    last_name VARCHAR(250) NOT NULL,
-    age INT NOT NULL
-);
-
-CREATE TABLE publish
-er(
-	publisher_id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(250) NOT NULL,
-    foundation_year INT NOT NULL,
-    country VARCHAR(250) NOT NULL
-);
-
-CREATE TABLE book(
-	book_id INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(250) NOT NULL,
-    description TEXT NOT NULL,
-    year INT NOT NULL,
-    publisher_id INT NOT NULL,
-    author_id INT NOT NULL,
-    
-    FOREIGN KEY(publisher_id) REFERENCES publisher(publisher_id),
-    FOREIGN KEY(author_id) REFERENCES author(author_id)
-);
 
 INSERT INTO author (name, last_name, age)
 VALUES
 ("James", "Dashner", 50),
 ("Stephen", "King", 76),
 ("Joanne", "Rowling", 58);
-                    
+                 
 INSERT INTO publisher(name, foundation_year, country)
 VALUES
 ("Bloomsbury Publishing", 1986, "England"),
 ("Delacorte Press", 1921, "USA"),
 ("Viking", 1925, "USA");
-                    
+                 
 INSERT INTO book(title, description, publisher_id, author_id, year)
 VALUES
 ("Maze Runner", "Thomas wakes up in a metal elevator that brings him to the Glade. He has no memory of who he is or how he got there, except for his name. He gradually discovers that the Glade is run by two boys: Alby, the leader, and Newt, the second-in-charge, who both maintain order by enforcing simple but effective rules. ", 2, 1, 2009),
