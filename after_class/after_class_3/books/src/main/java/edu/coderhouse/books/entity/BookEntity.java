@@ -1,12 +1,12 @@
 package edu.coderhouse.books.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -28,12 +28,12 @@ public class BookEntity {
     @Column(nullable = false)
     private Integer year;
 
-    @ManyToOne
-    @JoinTable(name = "book_author", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "author_id")
     private AuthorEntity author;
 
-    @ManyToOne
-    @JoinTable(name = "book_publisher", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "publisher_id"))
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "publisher_id")
     private PublisherEntity publisher;
 
     public BookEntity() {
