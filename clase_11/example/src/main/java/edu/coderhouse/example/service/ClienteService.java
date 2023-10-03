@@ -1,5 +1,6 @@
 package edu.coderhouse.example.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,10 @@ public class ClienteService {
 
     public Optional<ClienteEntity> findById(Long id) {
         return clienteRepository.findById(id);
+    }
+
+    public List<ClienteEntity> findAll() {
+        return clienteRepository.findAll();
     }
     
 }

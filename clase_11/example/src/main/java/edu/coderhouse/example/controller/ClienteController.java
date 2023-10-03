@@ -22,6 +22,12 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
+    @GetMapping(value = "/", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<Iterable<ClienteEntity>> findAll() {
+        Iterable<ClienteEntity> clientes = clienteService.findAll();
+        return ResponseEntity.ok(clientes);
+    }
+
     @GetMapping(value = "/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Optional<ClienteEntity>> findById(@PathVariable Long id) {
         Optional<ClienteEntity> cliente = clienteService.findById(id);
