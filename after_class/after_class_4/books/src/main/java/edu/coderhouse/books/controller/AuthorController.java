@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.annotation.ObjectIdGenerators.StringIdGenerator;
-
 import edu.coderhouse.books.entity.AuthorEntity;
 import edu.coderhouse.books.response.AuthorResponse;
 import edu.coderhouse.books.service.AuthorService;
